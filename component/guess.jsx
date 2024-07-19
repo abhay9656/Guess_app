@@ -5,8 +5,17 @@ const guess = () => {
 
     const [number, setNumber] = useState(0)
     const [score, setScore] = useState(0)
-
-   
+    let fix=34
+   const result = () => {
+    if (fix>number) {
+        setScore(score+1)
+    }
+   }
+   const loss=()=>{
+    if (fix<number) {
+        setScore(score+1)
+    }
+   }
 
     const randomNumber = () => {
         let num = Math.floor(Math.random() * 100) + 1
@@ -19,8 +28,8 @@ const guess = () => {
         <Text style={styles.num}>{number}</Text>
         <Button title='Generate a numnber' onPress={randomNumber}/>
         <View style={styles.btn}>
-            <Button title='less than'/>
-            <Button title='less than'/>
+            <Button title='Greater than' onPress={result}/>
+            <Button title='less than' onPress={loss}/>
         </View>
         <Text style={{marginTop:20,textAlign:'center',fontSize:20,fontWeight:'bold'}}>
             Score: {score}
