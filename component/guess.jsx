@@ -5,16 +5,26 @@ const guess = () => {
 
     const [number, setNumber] = useState(0)
     const [score, setScore] = useState(0)
-    let fix=34
+    let fix=Math.floor(Math.random()*100)
    const result = () => {
     if (fix>number) {
         setScore(score+1)
+    }
+    else{
+        setScore(score-1)
     }
    }
    const loss=()=>{
     if (fix<number) {
         setScore(score+1)
     }
+    else{
+        setScore(score-1)
+    }
+   }
+
+   const reset=()=>{
+         setScore(0)
    }
 
     const randomNumber = () => {
@@ -25,6 +35,7 @@ const guess = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Guess Number</Text>
+      <Text style={{marginTop:20,textAlign:'center',fontSize:20,fontWeight:'bold'}}>Number Generated:{fix}</Text>
         <Text style={styles.num}>{number}</Text>
         <Button title='Generate a numnber' onPress={randomNumber}/>
         <View style={styles.btn}>
@@ -34,6 +45,7 @@ const guess = () => {
         <Text style={{marginTop:20,textAlign:'center',fontSize:20,fontWeight:'bold'}}>
             Score: {score}
         </Text>
+        <Button title='Reset Score' style={{ marginTop:10}} onPress={reset}/>
     </View>
   )
 }
@@ -43,12 +55,11 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: 'blue',
         fontWeight: 'bold',
-        marginBottom: 20
+        marginBottom: 20,
+        textAlign: 'center'
     },
     container:{
-        marginTop:50,
-        
-        
+        marginTop:50,        
     },
     num:{
         fontSize: 50,
