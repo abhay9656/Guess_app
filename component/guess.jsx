@@ -4,6 +4,9 @@ import { StyleSheet, Text, View ,Button} from 'react-native';
 const guess = () => {
 
     const [number, setNumber] = useState(0)
+    const [score, setScore] = useState(0)
+
+   
 
     const randomNumber = () => {
         let num = Math.floor(Math.random() * 100) + 1
@@ -15,6 +18,13 @@ const guess = () => {
       <Text style={styles.text}>Guess Number</Text>
         <Text style={styles.num}>{number}</Text>
         <Button title='Generate a numnber' onPress={randomNumber}/>
+        <View style={styles.btn}>
+            <Button title='less than'/>
+            <Button title='less than'/>
+        </View>
+        <Text style={{marginTop:20,textAlign:'center',fontSize:20,fontWeight:'bold'}}>
+            Score: {score}
+        </Text>
     </View>
   )
 }
@@ -36,7 +46,12 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         textAlign: 'center'
-
+    },
+    btn:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap:10,
+        marginTop:20
     }
 })
 
