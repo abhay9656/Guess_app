@@ -11,7 +11,7 @@ const guess = () => {
         setScore(score+1)
     }
     else{
-        setScore(score-1)
+        setScore(score > 0 ? score - 1 : 0);
     }
    }
    const loss=()=>{
@@ -19,7 +19,7 @@ const guess = () => {
         setScore(score+1)
     }
     else{
-        setScore(score-1)
+        setScore(score > 0 ? score - 1 : 0);
     }
    }
 
