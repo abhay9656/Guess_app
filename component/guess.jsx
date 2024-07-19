@@ -35,7 +35,8 @@ const guess = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Guess Number</Text>
-      <Text style={{marginTop:20,textAlign:'center',fontSize:20,fontWeight:'bold'}}>Number Generated:{fix}</Text>
+      <Text style={{marginTop:20,textAlign:'center',fontSize:20,fontWeight:'bold'}}>Computer Generated:{fix}</Text>
+      <Text></Text>
         <Text style={styles.num}>{number}</Text>
         <Button title='Generate a numnber' onPress={randomNumber}/>
         <View style={styles.btn}>
